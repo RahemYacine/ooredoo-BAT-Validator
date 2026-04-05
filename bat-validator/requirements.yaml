@@ -1,0 +1,14 @@
+packages:
+  "framer-motion": "Smooth page transitions, splash screen, and scanning animations"
+  "react-hook-form": "Form handling for decision and report screens"
+  "@hookform/resolvers": "Zod integration for form validation"
+  "date-fns": "Formatting report dates"
+  "clsx": "Utility for conditionally joining classNames"
+  "tailwind-merge": "Utility for merging tailwind classes safely"
+
+images: []
+
+notes:
+  - Using generated hooks from @workspace/api-client-react
+  - Simulating mobile-first view constraint on larger screens for premium app feel
+  - Uses native getUserMedia for camera capture

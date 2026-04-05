@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Outfit', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+
+  --color-background: hsl(0 0% 98%);
+  --color-foreground: hsl(0 0% 10%);
+  
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(0 0% 10%);
+  
+  --color-primary: hsl(357 86% 52%); /* Ooredoo Red #EE1B24 */
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  --color-secondary: hsl(0 0% 96%);
+  --color-secondary-foreground: hsl(0 0% 10%);
+  
+  --color-muted: hsl(0 0% 94%);
+  --color-muted-foreground: hsl(0 0% 40%);
+  
+  --color-accent: hsl(0 0% 92%);
+  --color-accent-foreground: hsl(0 0% 10%);
+  
+  --color-success: hsl(142 71% 45%);
+  --color-success-foreground: hsl(0 0% 100%);
+  
+  --color-warning: hsl(38 92% 50%);
+  --color-warning-foreground: hsl(0 0% 100%);
+  
+  --color-destructive: hsl(357 86% 52%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  
+  --color-border: hsl(0 0% 90%);
+  --color-input: hsl(0 0% 88%);
+  --color-ring: hsl(357 86% 52% / 0.3);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-gray-100 text-foreground selection:bg-primary/20 selection:text-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Custom Scrollbar for hidden scrollable areas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Camera scan animation */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+
+.animate-scanline {
+  animation: scanline 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
